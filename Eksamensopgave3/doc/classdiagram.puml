@@ -1,0 +1,51 @@
+@startuml
+!pragma layout smetana
+
+class Academy{
+
+    - List<Student> students
+    - List<Course> courses
+
+    + void addCourse(Course course)
+    + void addStudent(Student student)
+    + void printDiploma(Student student)
+    + void printTopStudents(int topN)
+    + void printBottomStudents(int bottomN)
+
+}
+
+class Student{
+
+    - String name
+    - Map<Course, Integer> courses
+
+    + Student(name)
+    + void addCourse(Course course, int grade)
+    + Map<Course, Integer> getCourses()
+    + void printCoursesAndGrades()
+    + double getAverageGrade()
+    + String getName()
+
+}
+
+class Course{
+
+    - String subject
+
+    + Course(subject)
+    + String getSubject()
+
+}
+
+class Main{
+
+    + static void main(String[] args)
+
+}
+
+Academy --> Student : has-a
+Academy --> Course : has-a
+Student --> Course : has-a
+Main ..> Academy
+
+@enduml
