@@ -21,7 +21,7 @@ public class Main {
         academy.addStudent(karl);
         academy.addStudent(victoria);
         academy.addStudent(hans);
-
+        
         karl.addCourse(processing,10);
         karl.addCourse(java,7);
         karl.addCourse(sql,4);
@@ -41,6 +41,8 @@ public class Main {
 
         academy.printTopStudents(3);
         academy.printBottomStudents(3);
+
+        hans.printCoursesAndGrades();
 
     }
 

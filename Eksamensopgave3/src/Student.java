@@ -13,16 +13,16 @@ public class Student {
 
     }
 
+    private boolean isValidGrade(int grade) {
+
+        return grade == -3 || grade == 0 || grade == 2 || grade == 4 || grade == 7 || grade == 10 || grade == 12;
+
+    }
+
     public void addCourse(Course course, int grade) {
 
         if (courses.containsKey(course)) return;
         if (isValidGrade(grade)) courses.put(course, grade);
-
-    }
-
-    private boolean isValidGrade(int grade) {
-
-        return grade == -3 || grade == 0 || grade == 2 || grade == 4 || grade == 7 || grade == 10 || grade == 12;
 
     }
 
@@ -40,10 +40,19 @@ public class Student {
 
     public double getAverageGrade() {
 
-        if (courses.isEmpty()) return 0.0;
+        if (courses.isEmpty()){
+
+            return 0.0;
+
+    }
         int total = 0;
-        for (int grade : courses.values()) total += grade;
-        return total / (double) courses.size();
+        for (int grade : courses.values()) {
+
+            total += grade;
+
+        }
+
+        return total / (double)courses.size();
 
     }
 
